@@ -12,19 +12,19 @@ See [PLAN.md](PLAN.md) for the full architecture decision record and [PROGRESS_T
 
 ```bash
 # Build (skip tests)
-mvn clean package -DskipTests
+./mvnw clean package -DskipTests
 
 # Run the app — serves frontend at http://localhost:8080
-mvn spring-boot:run
+./mvnw spring-boot:run
 
 # Run all tests
-mvn test
+./mvnw test
 
 # Run a single test class
-mvn test -Dtest=SudokuSolverTest
+./mvnw test -Dtest=SudokuSolverTest
 
 # Run a single test method
-mvn test -Dtest=SudokuSolverTest#solvesHardPuzzle
+./mvnw test -Dtest=SudokuSolverTest#solvesHardPuzzle
 ```
 
 ## Architecture

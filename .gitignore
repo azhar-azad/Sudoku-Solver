@@ -1,12 +1,16 @@
 # Maven
 target/
 *.class
+!**/src/main/**/target/
+!**/src/test/**/target/
 
 # IntelliJ IDEA
 .idea/workspace.xml
 .idea/usage.statistics.xml
 .idea/shelf/
 *.iml
+*.iws
+*.ipr
 out/
 
 # VS Code
