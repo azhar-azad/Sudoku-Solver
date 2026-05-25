@@ -17,8 +17,21 @@
             <button id="load-btn">Load</button>
         </div>
         <div id="paste-error"></div>
+        <div id="speed-row">
+            <label for="speed-select">Speed:</label>
+            <select id="speed-select">
+                <option value="300">Slow</option>
+                <option value="100" selected>Regular</option>
+                <option value="30">Fast</option>
+                <option value="5">Very Fast</option>
+                <option value="0">No visual</option>
+            </select>
+        </div>
         <div id="action-row">
             <button id="solve-btn">Solve</button>
+            <button id="pause-btn" disabled>Pause</button>
+            <button id="resume-btn" disabled>Resume</button>
+            <button id="reset-btn" disabled>Reset</button>
         </div>
     </div>
 

@@ -58,14 +58,14 @@ Tick `[x]` when the commit is made. Work top-to-bottom — items within a phase 
 
 ## Phase 6 — Animator with speed control
 
-- [ ] Add speed selector to `index.html` (Slow / Regular / Fast / Very Fast / No visual)
-- [ ] Add `animator.js` with `play(steps, speedMs, onStep, onDone)` using `setTimeout` recursion
-- [ ] Wire animator into `app.js`: instead of writing `finalBoard` directly, replay `steps`
-- [ ] Add `.cell-active` CSS class and apply it to the cell currently being changed
-- [ ] Add `.cell-backtrack` CSS class (red flash) for `BACKTRACK` action steps
-- [ ] Read current speed at each tick (so changing speed mid-animation takes effect on the next step)
-- [ ] Add Pause and Resume buttons to `index.html` and wire them to the animator
-- [ ] Add Reset button: stops animation, clears computed cells back to original input
+- [x] Add speed selector to `index.html` (Slow / Regular / Fast / Very Fast / No visual)
+- [x] Add `animator.js` with `play(steps, speedFn, onStep, onDone)` using `setTimeout` recursion
+- [x] Wire animator into `app.js`: instead of writing `finalBoard` directly, replay `steps`
+- [x] Add `.cell-active` CSS class and apply it to the cell currently being changed
+- [x] Add `.cell-backtrack` CSS class (red flash) for `BACKTRACK` action steps
+- [x] Read current speed at each tick (so changing speed mid-animation takes effect on the next step)
+- [x] Add Pause and Resume buttons to `index.html` and wire them to the animator
+- [x] Add Reset button: stops animation, clears computed cells back to original input
 
 ## Phase 7 — No-visual mode and polish
 
