@@ -38,6 +38,13 @@ export function writeGrid(board) {
     });
 }
 
+export function clearGrid() {
+    document.querySelectorAll('.cell').forEach(cell => {
+        cell.value = '';
+        cell.classList.remove('cell-given', 'cell-active', 'cell-backtrack');
+    });
+}
+
 export function parsePaste(str) {
     const cleaned = str.trim().replace(/\./g, '0');
     if (cleaned.length !== 81 || !/^[0-9]+$/.test(cleaned)) return null;

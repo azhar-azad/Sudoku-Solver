@@ -1,4 +1,4 @@
-import { renderGrid, readGrid, writeGrid, parsePaste } from './grid.js';
+import { renderGrid, readGrid, writeGrid, clearGrid, parsePaste } from './grid.js';
 import { solve } from './api.js';
 import { createAnimator } from './animator.js';
 
@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const pauseBtn      = document.getElementById('pause-btn');
     const resumeBtn     = document.getElementById('resume-btn');
     const resetBtn      = document.getElementById('reset-btn');
+    const clearBtn      = document.getElementById('clear-btn');
     const status        = document.getElementById('status');
 
     const animator = createAnimator();
@@ -24,12 +25,13 @@ document.addEventListener('DOMContentLoaded', () => {
         return parseInt(speedSelect.value);
     }
 
-    function setControls({ solve, pause, resume, reset }) {
+    function setControls({ solve, pause, resume, reset, clear }) {
         solveBtn.disabled  = !solve;
         loadBtn.disabled   = !solve;
         pauseBtn.disabled  = !pause;
         resumeBtn.disabled = !resume;
         resetBtn.disabled  = !reset;
+        clearBtn.disabled  = !clear;
     }
 
     function clearActiveCell() {
@@ -52,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     solveBtn.addEventListener('click', async () => {
         status.textContent = 'Solving…';
-        setControls({ solve: false, pause: false, resume: false, reset: false });
+        setControls({ solve: false, pause: false, resume: false, reset: false, clear: false });
 
         try {
             originalBoard = readGrid();
@@ -61,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Validation failure — no animation
             if (!result.solved && result.error && !result.steps?.length) {
                 status.textContent = 'Invalid puzzle: ' + result.error;
-                setControls({ solve: true, pause: false, resume: false, reset: false });
+                setControls({ solve: true, pause: false, resume: false, reset: false, clear: true });
                 return;
             }
 
@@ -73,13 +75,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 } else {
                     status.textContent = 'Unsolvable';
                 }
-                setControls({ solve: true, pause: false, resume: false, reset: true });
+                setControls({ solve: true, pause: false, resume: false, reset: true, clear: true });
                 return;
             }
 
             // Animate
             const cells = document.querySelectorAll('.cell');
-            setControls({ solve: false, pause: true, resume: false, reset: true });
+            setControls({ solve: false, pause: true, resume: false, reset: true, clear: false });
 
             animator.play(
                 result.steps,
@@ -96,23 +98,23 @@ document.addEventListener('DOMContentLoaded', () => {
                     status.textContent = result.solved
                         ? `Solved in ${result.stepCount} steps (${result.elapsedMs}ms)`
                         : 'Unsolvable';
-                    setControls({ solve: true, pause: false, resume: false, reset: true });
+                    setControls({ solve: true, pause: false, resume: false, reset: true, clear: true });
                 }
             );
         } catch (err) {
             status.textContent = 'Error: ' + err.message;
-            setControls({ solve: true, pause: false, resume: false, reset: false });
+            setControls({ solve: true, pause: false, resume: false, reset: false, clear: true });
         }
     });
 
     pauseBtn.addEventListener('click', () => {
         animator.pause();
-        setControls({ solve: false, pause: false, resume: true, reset: true });
+        setControls({ solve: false, pause: false, resume: true, reset: true, clear: false });
     });
 
     resumeBtn.addEventListener('click', () => {
         animator.resume();
-        setControls({ solve: false, pause: true, resume: false, reset: true });
+        setControls({ solve: false, pause: true, resume: false, reset: true, clear: false });
     });
 
     resetBtn.addEventListener('click', () => {
@@ -120,6 +122,15 @@ document.addEventListener('DOMContentLoaded', () => {
         clearActiveCell();
         if (originalBoard) writeGrid(originalBoard);
         status.textContent = '';
-        setControls({ solve: true, pause: false, resume: false, reset: false });
+        setControls({ solve: true, pause: false, resume: false, reset: false, clear: true });
+    });
+
+    clearBtn.addEventListener('click', () => {
+        animator.stop();
+        clearActiveCell();
+        clearGrid();
+        originalBoard = null;
+        status.textContent = '';
+        setControls({ solve: true, pause: false, resume: false, reset: false, clear: true });
     });
 });
