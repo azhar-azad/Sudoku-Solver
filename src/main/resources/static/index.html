@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku Solver</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Sudoku Solver</h1>
+
+    <div id="grid"></div>
+
+    <div id="controls">
+        <div id="paste-area">
+            <input type="text" id="paste-input" placeholder="Paste 81-char puzzle (0 or . for blanks)">
+            <button id="load-btn">Load</button>
+        </div>
+        <div id="paste-error"></div>
+    </div>
+
+    <div id="status"></div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>

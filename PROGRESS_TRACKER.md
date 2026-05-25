@@ -41,13 +41,13 @@ Tick `[x]` when the commit is made. Work top-to-bottom — items within a phase 
 
 ## Phase 4 — Frontend grid and paste input
 
-- [ ] Add `src/main/resources/static/index.html` with page skeleton (title, container divs for grid/controls/status)
-- [ ] Add `styles.css` with CSS-grid 9x9 layout and thick 3x3 box borders
-- [ ] Add `grid.js` exporting `renderGrid(container)`, `readGrid()`, `writeGrid(board)`
-- [ ] Wire grid render on page load via `app.js`
-- [ ] Add paste textarea + "Load from text" button to `index.html`
-- [ ] Implement paste-string parser (81 chars, accepts `0` or `.` for blanks) in `grid.js` and wire button in `app.js`
-- [ ] Style invalid paste input with a small inline error message
+- [x] Add `src/main/resources/static/index.html` with page skeleton (title, container divs for grid/controls/status)
+- [x] Add `styles.css` with CSS-grid 9x9 layout and thick 3x3 box borders
+- [x] Add `grid.js` exporting `renderGrid(container)`, `readGrid()`, `writeGrid(board)`
+- [x] Wire grid render on page load via `app.js`
+- [x] Add paste textarea + "Load from text" button to `index.html`
+- [x] Implement paste-string parser (81 chars, accepts `0` or `.` for blanks) in `grid.js` and wire button in `app.js`
+- [x] Style invalid paste input with a small inline error message
 
 ## Phase 5 — Frontend ↔ backend wiring (no animation yet)
 
