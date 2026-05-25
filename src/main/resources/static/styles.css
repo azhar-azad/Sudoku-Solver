@@ -99,6 +99,21 @@ h1 {
     align-self: flex-start;
 }
 
+#speed-row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+#speed-select {
+    padding: 0.3rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
 #action-row {
     width: 100%;
     display: flex;
