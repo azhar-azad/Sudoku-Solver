@@ -77,8 +77,9 @@ Tick `[x]` when the commit is made. Work top-to-bottom — items within a phase 
 
 ## Phase 8 — README and final verification
 
-- [ ] Add `README.md` with: prerequisites (Java 21, Maven), `mvn spring-boot:run`, open `http://localhost:8080`, brief feature list
-- [ ] Run full verification plan from `PLAN.md` end-to-end (all 8 checks) and fix anything broken
+- [x] Update `README.md` with prerequisites, commands, full feature list, and API reference
+- [x] Backend verification: all 12 tests pass; API smoke test returns `solved: true` in 1ms
+- [ ] Frontend verification: checks 3–8 from PLAN.md (manual browser checks)
 - [ ] Final commit tagging the project as v1.0 (optional)
 
 ---

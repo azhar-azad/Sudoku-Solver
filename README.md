@@ -15,6 +15,20 @@ A web application that lets you input an incomplete Sudoku puzzle and watch a ba
 
 Then open [http://localhost:8080](http://localhost:8080).
 
+## Features
+
+- **9×9 input grid** — type digits directly into cells (1–9 only)
+- **Paste input** — paste an 81-character string (`0` or `.` for blanks) and click Load
+- **Backtracking solver** — pure Java recursive solver records every placement and backtrack
+- **Step-by-step animation** — watch the algorithm work in real time with cell highlighting:
+  - Green flash for each digit placed
+  - Red flash for each backtrack
+- **Adjustable speed** — Slow (300ms) / Regular (100ms) / Fast (30ms) / Very Fast (5ms) / No visual
+- **Pause / Resume / Reset** — full animation control; Reset restores your original input
+- **Clear board** — wipe the grid to start fresh
+- **Pre-solve validation** — duplicate detection before solving; clear error messages shown
+- **Unsolvable detection** — exhaustive search with step replay, then "Unsolvable" status
+
 ## Test
 
 ```bash
@@ -32,6 +46,20 @@ Then open [http://localhost:8080](http://localhost:8080).
 
 ```bash
 ./mvnw clean package -DskipTests
+```
+
+## API
+
+```
+POST /api/solve
+Content-Type: application/json
+
+{ "board": [[5,3,0,...], ...] }   // 9×9, 0 = blank
+```
+
+Success response:
+```json
+{ "solved": true, "finalBoard": [[...]], "steps": [...], "stepCount": 1247, "elapsedMs": 38 }
 ```
 
 ---
