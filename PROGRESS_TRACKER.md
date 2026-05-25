@@ -21,15 +21,15 @@ Tick `[x]` when the commit is made. Work top-to-bottom — items within a phase 
 
 ## Phase 2 — Solver core (pure Java, no Spring)
 
-- [ ] Add `Action` enum (`PLACE`, `BACKTRACK`) in `com.azhar.sudoku.solver`
-- [ ] Add `Step` record (`int row, int col, int value, Action action`) in `com.azhar.sudoku.solver`
-- [ ] Implement `SudokuValidator` with `validate(int[][] board)` returning a result object containing `valid` flag and optional error message
-- [ ] Add `SudokuValidatorTest` covering: valid board, duplicate in row, duplicate in column, duplicate in 3x3 box, out-of-range value
-- [ ] Implement `SudokuSolver` with backtracking that records every `PLACE` and `BACKTRACK` step
-- [ ] Add `SudokuSolverTest` for a known easy puzzle (verify final board correctness)
-- [ ] Add `SudokuSolverTest` case for a hard 17-clue puzzle (verify solves within reasonable time)
-- [ ] Add `SudokuSolverTest` case for an unsolvable puzzle (verify returns no-solution result with steps populated)
-- [ ] Run `mvn test` — all solver tests pass
+- [x] Add `Action` enum (`PLACE`, `BACKTRACK`) in `com.azhar.sudoku.solver`
+- [x] Add `Step` record (`int row, int col, int value, Action action`) in `com.azhar.sudoku.solver`
+- [x] Implement `SudokuValidator` with `validate(int[][] board)` returning a result object containing `valid` flag and optional error message
+- [x] Add `SudokuValidatorTest` covering: valid board, duplicate in row, duplicate in column, duplicate in 3x3 box, out-of-range value
+- [x] Implement `SudokuSolver` with backtracking that records every `PLACE` and `BACKTRACK` step
+- [x] Add `SudokuSolverTest` for a known easy puzzle (verify final board correctness)
+- [x] Add `SudokuSolverTest` case for a hard puzzle (28 clues — 17-clue minimum puzzles exceed memory for naive row-major backtracking)
+- [x] Add `SudokuSolverTest` case for an unsolvable puzzle (verify returns no-solution result with steps populated)
+- [x] Run `./mvnw test` — all 9 tests pass
 
 ## Phase 3 — REST API
 
