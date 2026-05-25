@@ -69,11 +69,11 @@ Tick `[x]` when the commit is made. Work top-to-bottom — items within a phase 
 
 ## Phase 7 — No-visual mode and polish
 
-- [ ] When "No visual" is selected, skip animation and write `finalBoard` immediately
-- [ ] Display step count and elapsed solve time from the response in the status area
-- [ ] Disable Solve button while solving/animating; re-enable on done or reset
-- [ ] Add a "Clear board" button that resets the input grid entirely
-- [ ] Tidy CSS: readable fonts, sensible cell size, visible focus state for keyboard input
+- [x] When "No visual" is selected, skip animation and write `finalBoard` immediately
+- [x] Display step count and elapsed solve time from the response in the status area
+- [x] Disable Solve button while solving/animating; re-enable on done or reset
+- [x] Add a "Clear board" button that resets the input grid entirely
+- [x] Tidy CSS: readable fonts, sensible cell size, visible focus state for keyboard input
 
 ## Phase 8 — README and final verification
 
