@@ -33,11 +33,11 @@ Tick `[x]` when the commit is made. Work top-to-bottom — items within a phase 
 
 ## Phase 3 — REST API
 
-- [ ] Add `SolveRequest` DTO (`int[][] board`)
-- [ ] Add `SolveResponse` DTO (`boolean solved, int[][] finalBoard, List<Step> steps, int stepCount, long elapsedMs, String error`)
-- [ ] Add `SolveController` with `POST /api/solve`: runs validator, then solver, returns response
-- [ ] Add `GlobalExceptionHandler` (`@ControllerAdvice`) to convert validation and unexpected errors into clean JSON
-- [ ] Manually smoke-test endpoint with `curl` for valid, invalid, and unsolvable payloads (manual check, no commit needed)
+- [x] Add `SolveRequest` DTO (`int[][] board`)
+- [x] Add `SolveResponse` DTO (`boolean solved, int[][] finalBoard, List<Step> steps, int stepCount, long elapsedMs, String error`)
+- [x] Add `SolveController` with `POST /api/solve`: runs validator, then solver, returns response
+- [x] Add `GlobalExceptionHandler` (`@ControllerAdvice`) to convert validation and unexpected errors into clean JSON
+- [x] Add `SolveControllerTest` covering valid, invalid, and unsolvable payloads via MockMvc — all 12 tests pass
 
 ## Phase 4 — Frontend grid and paste input
 
