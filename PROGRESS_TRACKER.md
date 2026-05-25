@@ -51,9 +51,9 @@ Tick `[x]` when the commit is made. Work top-to-bottom — items within a phase 
 
 ## Phase 5 — Frontend ↔ backend wiring (no animation yet)
 
-- [ ] Add `api.js` exporting `solve(board)` that POSTs to `/api/solve` and returns parsed JSON
-- [ ] Add "Solve" button in `index.html` and handler in `app.js`: read grid → call api → write `finalBoard`
-- [ ] Display status messages (`Solving…`, `Solved`, `Invalid puzzle: …`, `Unsolvable`) in the status area
+- [x] Add `api.js` exporting `solve(board)` that POSTs to `/api/solve` and returns parsed JSON
+- [x] Add "Solve" button in `index.html` and handler in `app.js`: read grid → call api → write `finalBoard`
+- [x] Display status messages (`Solving…`, `Solved in N steps (Xms)`, `Invalid puzzle: …`, `Unsolvable`) in the status area
 - [ ] Manually verify full round-trip in browser: type puzzle, click Solve, see solution appear instantly
 
 ## Phase 6 — Animator with speed control

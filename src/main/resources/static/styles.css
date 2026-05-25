@@ -99,6 +99,16 @@ h1 {
     align-self: flex-start;
 }
 
+#action-row {
+    width: 100%;
+    display: flex;
+    gap: 0.5rem;
+}
+
+#solve-btn {
+    font-weight: bold;
+}
+
 button {
     padding: 0.4rem 0.9rem;
     cursor: pointer;
