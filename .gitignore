@@ -5,9 +5,7 @@ target/
 !**/src/test/**/target/
 
 # IntelliJ IDEA
-.idea/workspace.xml
-.idea/usage.statistics.xml
-.idea/shelf/
+.idea/
 *.iml
 *.iws
 *.ipr
