@@ -1,3 +1,8 @@
 spring:
   application:
     name: sudoku-solver
+
+server:
+  port: ${PORT:8080}
+
+# Random Sudoku string for test: 000000900080105760009704003000000000000080516567300000710620090000000000690040308
