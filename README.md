@@ -2,6 +2,9 @@
 
 A web application that lets you input an incomplete Sudoku puzzle and watch a backtracking algorithm solve it step by step, with adjustable animation speed.
 
+**Live demo:** https://sudoku-solver-dgy9.onrender.com
+> First load may take ~30 seconds (free tier cold start)
+
 ## Prerequisites
 
 - Java 21+
