@@ -5,7 +5,7 @@ WORKDIR /app
 # Copy wrapper and pom first so dependency layer is cached
 COPY .mvn/ .mvn/
 COPY mvnw pom.xml ./
-RUN ./mvnw dependency:go-offline -q
+RUN chmod +x mvnw && ./mvnw dependency:go-offline -q
 
 COPY src/ src/
 RUN ./mvnw clean package -DskipTests -q
