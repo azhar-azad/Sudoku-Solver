@@ -1,7 +1,7 @@
 services:
   - type: web
     name: sudoku-solver
-    runtime: image
+    runtime: docker
     plan: free
     dockerfilePath: ./Dockerfile
     envVars:
